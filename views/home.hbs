@@ -1,0 +1,15 @@
+{{#> menuLeft }}
+    <h1>Welcome to S.K.V.S<span class="h1title">(simple key-value system)</span></h1>
+    <p>This is a simple system developed in Node.JS with various tools, such express, handlebars, socket.io and more.</p>
+    <p>You can click on the menu to see all the key/values there are.</p>
+    {{#lvlUser user.lvlUser 2}}<p>Also, you can create new ones and modify or delete existing keys.</p>{{/lvlUser}}
+    {{#lvlUser user.lvlUser 3}}<p>Finally, you are able to create, modify or delete users, each one can have a different level of interaction with this system.</p>{{/lvlUser}}
+    <p>you can check de API with the following URLs: </p>
+    <ul>
+        <li>api/keyvalue : to see all the key and their values</li>
+        <li>api/keyvalue/<span class="bold">key</span> : to see the value of a specific key, where <span class="bold">key</span> in the URL is the wanted key</li>
+    </ul>
+    
+{{/ menuLeft}}
+
+

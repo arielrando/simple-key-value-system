@@ -1,0 +1,32 @@
+{{#> menuLeft }}
+<div style="height:50px;">
+    {{#if userB}}
+    <h2>Modify User</h2>
+    {{else}}
+    <h2>Create an User</h2>
+    {{/if}}
+</div>
+<div class="row">
+  <div class="col-sm-12 px-md-5">
+      
+    <form id="usernameForm">
+      <label for="username">userName:</label><br>
+      <input class="form-control" type="text" id="username" name="username" value="{{userB.username}}"><br>
+      <label for="password">Password:</label><br>
+      <input class="form-control" type="password" id="password" name="password" {{#if showDots}}placeholder="*******"{{/if}}><br>
+      <label for="repassword">Re-Password:</label><br>
+      <input class="form-control" type="password" id="repassword" name="repassword" {{#if showDots}}placeholder="*******"{{/if}}><br>
+      <label for="lvlUser">Authorization Level:</label><br>
+      <select class="form-control" name="lvlUser" id="lvlUser">
+        <option value="1" {{#equal userB.lvlUser 1}}selected{{/equal}}>1 - can see Keys/Values</option>
+        <option value="2" {{#equal userB.lvlUser 2}}selected{{/equal}}>2 - can edit Keys/Values</option>
+        <option value="3" {{#equal userB.lvlUser 3}}selected{{/equal}}>3 - can edit Keys/Values and users</option>
+      </select><br>
+      <input type="hidden" id="id" name="id" value="{{userB.id}}">
+      <button class="btn btn-primary btn-sm active" name="usernameFormSubmit" id="usernameFormSubmit" value="S" type="submit">{{#if userB}}Modify{{else}}Create{{/if}}</button>
+    </form> 
+    <br>
+    <a href="/users/list" class="btn btn-dark btn-sm active" role="button" aria-pressed="true">Return</a>
+  </div>
+</div>
+{{/ menuLeft }}

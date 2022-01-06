@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="row">
+<div class="col-sm-4 col-md-3 col-lg-2">
+  <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" >
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <span class="fs-4">Control Panel</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="/home" class="nav-link link-dark" >
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="/keyvalue/list" class="nav-link link-dark">
+          Key/Values
+        </a>
+      </li>
+      {{#lvlUser user.lvlUser 3}}
+      <li>
+        <a href="/users/list" class="nav-link link-dark">
+          Users
+        </a>
+      </li>
+      {{/lvlUser}}
+      <li>
+        <hr>
+      </li>
+      <li>
+        <span>You are logged as {{user.username}} </span>
+        <br>
+        <a href="/logout" class="btn btn-warning btn-sm active sidebarButton" role="button" aria-pressed="true">Logout</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="col-sm-8 col-md-9 col-lg-10">
+  <hr>
+  {{> @partial-block }}
+  </div>
+</div>
+</div>

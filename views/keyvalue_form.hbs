@@ -1,0 +1,24 @@
+{{#> menuLeft }}
+<div style="height:50px;">
+    {{#if keyvalue}}
+    <h2>Modify Key/Value</h2>
+    {{else}}
+    <h2>Create a new Key/Value</h2>
+    {{/if}}
+</div>
+<div class="row">
+  <div class="col-sm-12 px-md-5">
+      
+    <form id="keyvalueForm">
+      <label for="key">Key:</label><br>
+      <input class="form-control" type="text" id="key" name="key" value="{{keyvalue.key}}"><br>
+      <label for="value">Value:</label><br>
+      <input class="form-control" type="text" id="value" name="value" value="{{keyvalue.value}}"><br>
+      <input type="hidden" id="id" name="id" value="{{keyvalue.id}}">
+      <button type="button" class="btn btn-primary btn-sm active" onclick="sendKeyvalue();">{{#if keyvalue}}Modify{{else}}Create{{/if}}</button>
+    </form> 
+    <br>
+    <a href="/keyvalue/list" class="btn btn-dark btn-sm active" role="button" aria-pressed="true">Return</a>
+  </div>
+</div>
+{{/ menuLeft }}

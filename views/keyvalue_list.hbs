@@ -1,0 +1,44 @@
+{{#> menuLeft }}
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <a href="/keyvalue/form" class="btn btn-dark btn-sm active" role="button" aria-pressed="true">Create Key/Value</a>
+        <br>
+        <div class="invisibleDiv"><span class="invisibleMessage" id="invisibleMessage">keys/values have been created or deleted, do you want to see them? <a href="/keyvalue/list">Reload</a></span></div>
+        <table class="table" id="tableKeyvalue">
+            {{#if haveKeyvalue}}
+            <thead>
+                <tr>
+                <th scope="col">Key</th>
+                <th scope="col">Value</th>
+                {{#lvlUser user.lvlUser 2}}<th scope="col">Actions</th>{{/lvlUser}}
+                </tr>
+            </thead>
+            <tbody>
+                {{#each listKeyvalue}}
+                    <tr id="trKeyvalue{{this.id}}">
+                        <td class="tdKey">{{this.key}}</td>
+                        <td class="tdValue">{{this.value}}</td>
+                        {{#lvlUser ../user.lvlUser 2}}
+                            <td>
+                                <a class="btn btn-primary btn-sm active" href="/keyvalue/form/{{this.id}}" >Modify</a> 
+                                <button class="btn btn-danger btn-sm active" onclick="deleteKey('{{this.id}}');" >Delete</button>
+                            </td>
+                        {{/lvlUser}}
+                    </tr>
+                {{/each}}
+            </tbody>
+            {{else}}
+            <tbody>
+                    <tr>
+                        <td>There is no Keys/Values yet, create a new one!</td>
+                    </tr>
+            </tbody>
+        {{/if}}
+        </table>
+        
+    </div>
+    <div class="col-sm-2"></div>
+    
+</div>
+{{/ menuLeft}}

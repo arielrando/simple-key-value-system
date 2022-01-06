@@ -1,0 +1,42 @@
+{{#> menuLeft }}
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <a href="/users/form" class="btn btn-dark btn-sm active" role="button" aria-pressed="true">Create User</a>
+        <br>
+        <div class="invisibleDiv"></div>
+        <table class="table" id="tableUsers">
+            {{#if haveUsers}}
+            <thead>
+                <tr>
+                <th scope="col">UserName</th>
+                <th scope="col">Authorization Level</th>
+                <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each listUsers}}
+                    <tr id="trUser{{this.id}}">
+                        <td class="tdUser">{{this.username}}</td>
+                        <td>{{this.lvlUser}}</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm active" href="/users/form/{{this.id}}" >Modify</a> 
+                            <button class="btn btn-danger btn-sm active" onclick="deleteUser('{{this.id}}');" >Delete</button>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+            {{else}}
+            <tbody>
+                    <tr>
+                        <td>There is no Users yet, create a new one!</td>
+                    </tr>
+            </tbody>
+        {{/if}}
+        </table>
+        
+    </div>
+    <div class="col-sm-2"></div>
+    
+</div>
+{{/ menuLeft}}

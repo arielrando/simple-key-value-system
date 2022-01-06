@@ -1,0 +1,44 @@
+  .nav-flush .nav-link {
+    border-radius: 0;
+  }
+  
+  .invisibleDiv{
+    height: 30px;
+  }
+  .invisibleMessage{
+    visibility: hidden;
+    font-size: small;
+    color: #0000005e;
+  }
+
+  .h1title{
+    font-size: small;
+    color: #0000005e;
+  }
+
+  .sidebarButton{
+    margin: 0.5rem 1rem;
+  }
+
+  .elementToFadeInAndOut {
+    -webkit-animation: fadeinout 4s linear forwards;
+    animation: fadeinout 4s linear forwards;
+}
+
+@-webkit-keyframes fadeinout {
+  0%,100% { background: #f8f9fa;  }
+  5% { background: rgb(255, 206, 143); }
+}
+
+@keyframes fadeinout {
+  0%,100% { backgroun: #f8f9fa; }
+  5% { background: rgb(255, 206, 143); }
+}
+
+ #tableKeyvalue > tbody > tr  {
+  background: #f8f9fa;
+}
+
+.bold{
+  font-weight: bold;
+}
