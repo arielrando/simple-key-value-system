@@ -31,6 +31,11 @@ To see all the key/values you must call the url http://localhost: 8080/api/keyva
 
 To consult the value of a specific key, you must enter http://localhost:8080/api/keyvalue/'key', where 'key' would be the key that we want to consult. If we enter a key that does not exist, we will be returned an error message and a 404 status
 
+
+## testing the api
+
+It is possible to run some tests on the api, for this we need to open a console on the project folder and execute the command "npm test". This will execute different tests to see that the expected results of the api are fulfilled.
+
 ## Technical considerations
 
 The challenge indicates that the creation and modification of keys/values should be done through websocket, this is possible and also if the site is opened from different browsers (or private sessions), when a modification of a key / value is made This modification can be seen in real time, if it is a creation or elimination, it will be notified in the other instance of said change.
@@ -68,6 +73,10 @@ También es posible consultar las Keys/Values desde un endpoint:
 Para ver todas las key/value se debe llamar a la url http://localhost:8080/api/keyvalue
 
 Para consultar el value de una key en especifico se  debe ingresar a http://localhost:8080/api/keyvalue/'key', en donde 'key' iria la key que deseamos consultar. si ingresamos una key que no existe se nos devolvera un mensaje de error y un status 404
+
+## testeando la api
+
+es posible correr unos tests sobre la api, para ello necesitamos abrir una consola sobre la carpeta del proyecto y ejecutar el comando "npm test". Esto ejecutara distintos test para ver que los resultados esperados de la api se cumplan
 
 ## Consideraciones técnicas
 
